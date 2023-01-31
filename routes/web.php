@@ -30,3 +30,18 @@ Route::middleware([
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/test', function () {
+    return view('blog.index',[
+        'bodyClass' => '',
+        'sidebar'  => true,
+    ]);
+});
+
+Route::get('/test/1', function () {
+    return view('blog.single',[
+        'bodyClass' => 'single',
+        'sidebar'  => false,
+    ]);
+});
+
